@@ -9,4 +9,4 @@ Click this url (http://htmlpreview.github.io/?https://github.com/Cathytvxq/House
 
 Move the mouse to the specific district. The background color of this district will be changed. The background color represents the average price of the district. The deeper the background color, the higher the average price. Meanwhile, the district name, the average price, the lower and the higher price will be shown beside.
 
-It needs to wait several seconds to see locations of communities in this district. One dot represents on community. The deeper the dot color, the higher the community price. The yellow small dot means the community with the unknown price.
+It needs to wait several seconds to see locations of communities in this district. One dot represents on community (because some communities information need to be computed). The deeper the dot color, the higher the community price. The yellow small dot means the community with the unknown price.
