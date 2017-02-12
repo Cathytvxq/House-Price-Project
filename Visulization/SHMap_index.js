@@ -45,7 +45,7 @@ d3.csv("./SHdistrictPrice.csv",function(ds){
 		}
 		else if (ds[i].avrPrice > maxAvrPrice) { 
 			maxAvrPrice = ds[i].avrPrice;
-		}
+		}//找到区域中平均房价的最大最小值，为颜色映射
 	}
 });
 

@@ -49,18 +49,18 @@ function getURLs_District(arr){
 	return newurls;
 } //获取所有区域每一页的URL
 
-request.get( urlXiaoqu, function(e, res, body){
-	if (e) {console.log(e);}
-	if (!e && res.statusCode == 200) {
-		var $ = cheerio.load(body);
-		urls_D = findURLs($);
-		urls_D = getURLs_District(urls_D);
-		console.log('urls_D length is ' + urls_D.length);
-		console.log(urls_D);
-	}
-} )
+// request.get( urlXiaoqu, function(e, res, body){
+// 	if (e) {console.log(e);}
+// 	if (!e && res.statusCode == 200) {
+// 		var $ = cheerio.load(body);
+// 		urls_D = findURLs($);
+// 		urls_D = getURLs_District(urls_D);
+// 		console.log('urls_D length is ' + urls_D.length);
+// 		console.log(urls_D);
+// 	}
+// } )
 
-/*module.exports = function(cb){
+module.exports = function(cb){
 	request.get(urlXiaoqu, function(e, res, body){
 		//if (e) {console.log(e);}
 		if (!e && res.statusCode == 200) {
@@ -71,5 +71,5 @@ request.get( urlXiaoqu, function(e, res, body){
 			cb(urls_D);
 		}
 	})
-} */
+} 
 
