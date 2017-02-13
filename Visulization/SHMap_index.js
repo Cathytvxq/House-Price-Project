@@ -45,7 +45,7 @@ d3.csv("./SHdistrictPrice.csv",function(ds){
 		}
 		else if (ds[i].avrPrice > maxAvrPrice) { 
 			maxAvrPrice = ds[i].avrPrice;
-		}//找到区域中平均房价的最大最小值，为颜色映射
+		}//找到区域中平均房价的最大最小值，为区域背景颜色映射做准备
 	}
 });
 
@@ -72,7 +72,7 @@ d3.json('./shanghai.json', function(ds){
  	.attr("d", path)
  	.attr('fill', '#fff')
     .attr('z-index', '1')
-    .attr('stroke', '#ddd')//画上海的地图
+    .attr('stroke', '#ddd')//画上海区域的地图
 	.on('mouseover', function(d){
 		var dist = d.properties.name.substring(0,2);
 		if ((dist!='南汇') && (dist!='卢湾')) {
@@ -90,7 +90,7 @@ d3.json('./shanghai.json', function(ds){
 			//
 			dataFrame(d);
 			//
-			drawDots(dist);
+			// drawDots(dist);
 		}else{
 			tooltip
 			.html(d.properties.name)
@@ -99,17 +99,13 @@ d3.json('./shanghai.json', function(ds){
 			.style("top", (d3.event.pageY + 10) + "px");
 		}
 	})
-	.on('mousemove', onMouseMove)
+	// .on('mousemove', onMouseMove)
+	.on('click', function(d){
+		var dist = d.properties.name.substring(0,2);
+		drawDots(dist);
+	})
 	.on('mouseout', onMouseOut)
  });
-
-
-//
-function onMouseMove(){
-	tooltip
-	.attr("left", (d3.event.pageX) + "px")
-	.style("top", (d3.event.pageY + 10) + "px")
-}
 
 function onMouseOut(){
 	d3.select(this).attr('fill', '#fff');
@@ -148,7 +144,7 @@ function str2array(c){
 }
 //3.颜色值
 function getFillColor(k){
-	var cmin = 'rgba(255,0,0,0.9)';
+	var cmin = 'rgba(0,0,255,0.9)';
 	var cmax = 'rgba(255,255,255,1)';
 	var cminArr = str2array(cmin);
  	var cmaxArr = str2array(cmax);
@@ -159,7 +155,7 @@ function getFillColor(k){
     return 'rgba(' + [r,g,b,a].join(',') + ')';
 }
 function getDotColor(k){
-	var cmin = 'rgba(0,0,255,0.9)';
+	var cmin = 'rgba(0,0,0,0.6)';
 	var cmax = 'rgba(255,255,255,1)';
 	var cminArr = str2array(cmin);
  	var cmaxArr = str2array(cmax);
@@ -201,7 +197,7 @@ function drawDots(dis) {
 				return dotColor;
 			}
 			else if ((d.district == dis) && (d.price==0)) {
-				return 'rgba(255, 255, 0, 1.0)'
+				return 'rgba(255, 0, 0, 0.4)'
 			}
 			else{ return 'none';}
 
