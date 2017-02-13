@@ -12,7 +12,7 @@ Click this url (http://htmlpreview.github.io/?https://github.com/Cathytvxq/House
 Details for the visualization
 
 1. Move the mouse to the specific district. 
-The background color of this district will be changed. The background color represents the average price of the district. The deeper the background color, the higher the average price. Meanwhile, the district name, the average price, the lower and the higher price will be shown beside.
+The background color of this district will be changed. The background color represents the average price of the district. The deeper this color, the higher the average price. Meanwhile, the district name, the average price, the lower and the higher price will be shown beside.
 
-2. Wait several seconds to see locations of communities in this district. (because many dots need to be drawn)
-One dot represents one community. The deeper the dot color, the higher the community price. Yellow small dots represent communities with unknown prices.
+2. Click the mouse to see locations of communities in this district. (it may need to wait few seconds because many dots need to be drawn)
+One dot represents one community. The deeper the dot color, the higher the community price. Red small dots represent communities with unknown prices.
